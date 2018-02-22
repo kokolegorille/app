@@ -292,6 +292,13 @@ $ mix release.init
 
 This will create a rel folder at the root of the project.
 
+Time to save to git.
+
+```bash
+$ git add .
+$ git commit -m "Add README"
+```
+
 ## Prepare the building machine
 
 In this example. I use a intermediate server to build the release. The idea is to keeè the production server as untouched as possible. It only needs a database backend, and the release binaries. This can also be done directly on the production server. 
@@ -585,3 +592,4 @@ $ sudo ln -s ../sites-available/app_umbrella ./
 ```
 
 If everything went well, your server should be running now.
+
