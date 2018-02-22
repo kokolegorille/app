@@ -16,7 +16,11 @@ use Mix.Config
 config :app_web, AppWeb.Endpoint,
   load_from_system_env: true,
   url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  #  
+  server: true,
+  root: ".",
+  version: Application.spec(:deploy_phoenix, :vsn)
 
 # ## SSL Support
 #
