@@ -314,7 +314,7 @@ Branch master set up to track remote branch master from origin.
 
 ## Prepare the building machine
 
-In this example. I use a intermediate server to build the release. The idea is to keeè the production server as untouched as possible. It only needs a database backend, and the release binaries. This can also be done directly on the production server. 
+In this example. I use a intermediate server to build the release. The idea is to leave the production server as untouched as possible. It only needs a database backend, and the release binaries. This can also be done directly on the production server. 
 
 It should be setup close as the production server.
 
