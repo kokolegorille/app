@@ -131,7 +131,7 @@ $ mix archive.install https://github.com/phoenixframework/archives/raw/master/ph
 
 ## Create umbrella application
 
-Now that all tools are installed, it's time to start a new project. In this demo, the name of the project is app. 
+Now that all tools are installed, it's time to start a new project. In this demo, the name of the project is app. Please note I don't use brunch, it takes years to install dependencies w/ it. I prefer webpack.
 
 ```bash
 $ mix phx.new app --umbrella --no-brunch
@@ -485,7 +485,7 @@ No need for Erlang nor Elixir nor Phoenix! You just add the tarball.
 
 Please install postgres as for the building machine.
 
-We will put Nginx in front of the application, as a webproxy. To start the application We will need to configure systemd. The hardest part on the production server is to install additional services.
+I will put Nginx in front of the application, as a webproxy. To start the application We will need to configure systemd. The hardest part on the production server is to install additional services.
 
 You should have the archive, and the dump file in your home directory.
 
@@ -565,8 +565,6 @@ $ sudo systemctl status app_umbrella.service
 ```
 
 ... and You should see your service running on port 4000.
-
-
 
 ### Nginx
 
