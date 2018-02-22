@@ -297,6 +297,19 @@ Time to save to git.
 ```bash
 $ git add .
 $ git commit -m "Add README"
+$ git remote add origin https://github.com/kokolegorille/app.git
+$ git push -u origin master
+Username for 'https://github.com': kokolegorille
+Password for 'https://kokolegorille@github.com': 
+Counting objects: 99, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (84/84), done.
+Writing objects: 100% (99/99), 69.68 KiB | 3.67 MiB/s, done.
+Total 99 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/kokolegorille/app.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
 ```
 
 ## Prepare the building machine
