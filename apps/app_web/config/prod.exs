@@ -20,7 +20,7 @@ config :app_web, AppWeb.Endpoint,
   #  
   server: true,
   root: ".",
-  version: Application.spec(:deploy_phoenix, :vsn)
+  version: Application.spec(:app_web, :vsn)
 
 # ## SSL Support
 #
