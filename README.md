@@ -235,14 +235,14 @@ $ MIX_ENV=prod mix run priv/repo/seeds.exs
 It's helpful to create a dump of the production table, this dump will be used later on the production server to create initial database. Keep this file for the moment in your home folder.
 
 ```bash
-$ sudo -u postgres pg_dump next_prod > ~/next_prod.dump
+$ sudo -u postgres pg_dump app_prod > ~/app_prod.dump
 ```
 
 You can copy this file on B and C.
 
 ```bash
-$ scp ~/next_prod.dump 192.168.0.1:~/
-$ scp ~/next_prod.dump 192.168.0.2:~/
+$ scp ~/app_prod.dump 192.168.0.1:~/
+$ scp ~/app_prod.dump 192.168.0.2:~/
 ```
 
 
@@ -495,7 +495,7 @@ postgres=# \q
 
 Do you remeber the dump file? You can use it to reload schema.
 
-$ sudo -u postgres psql next_prod < ~/next_prod.dump 
+$ sudo -u postgres psql app_prod < ~/app_prod.dump 
 
 ### Systemd
 
