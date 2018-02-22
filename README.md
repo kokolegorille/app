@@ -252,9 +252,10 @@ Reference: https://github.com/bitwalker/distillery
 
 Quite easy to follow documentation. 
 
-Start by updating the root mix file and add distillery. Please be careful with the mix.exs files, because there are 3 in this example.
+Start by updating the root mix file and add distillery. Please be careful with the mix.exs files, because there are 3 in this example. Returns to the root of the project.
 
 ```bash
+$ cd ../../
 $ vim mix.exs
 
 {:distillery, "~> 1.5", runtime: false}
@@ -602,6 +603,7 @@ server {
 }
 $ cd ../sites-enabled
 $ sudo ln -s ../sites-available/app_umbrella ./
+$ sudo service nginx restart
 ```
 
 If everything went well, your server should be running now.
