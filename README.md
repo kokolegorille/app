@@ -111,7 +111,7 @@ $ asdf global elixir 1.6.1-otp-20
 
 ### Repeat on building machine
 
-You will need to repeat this three last step on the bulding machine.
+You will need to repeat this three last steps on the bulding machine.
 
 For a Linux box, You will need to...
 
@@ -474,7 +474,7 @@ After the build is complete, You will find the production archive. This tar file
 
 ```bash
 $ cd _build/prod/rel/app_umbrella/releases/0.1.0/
-$ scp app_umbrella.tar.gz 192.168.0.2:~/
+$ scp app_umbrella.tar.gz 192.168.0.3:~/
 ```
 
 
@@ -492,7 +492,7 @@ You should have the archive, and the dump file in your home directory.
 Connect and extract the archive
 
 ```bash
-$ ssh 192.168.0.2
+$ ssh 192.168.0.3
 $ mkdir -p elixir/app_umbrella
 $ cd elixir/app_umbrella
 $ tar -xzvf ~/app_umbrella.tar.gz
