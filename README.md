@@ -327,7 +327,7 @@ You access the machine with ssh. The user on the development machine should have
 $ ssh 192.168.0.2
 ```
 
-or if user does not match, specify at it the command line.
+or if user does not match, specify it at the command line.
 
 ```bash
 $ ssh user@192.168.0.2
@@ -367,16 +367,19 @@ Replace by this list...
 * postgresql 
 * postgresql-contrib 
 
-libwxgtk3.0-dev was needed to run observer with Erlang 19. I did not yet run observer with a 20.1 release. It might is optional if You don't want observer to run.
+libwxgtk3.0-dev was needed to run observer with Erlang 19. I did not yet run observer with a 20.1 release. It is optional if You don't want observer to run.
 
 You will need also nodejs and yarn. Here is the method used.
 
 ```bash
 $ sudo add-apt-repository ppa:certbot/certbot
 $ sudo apt-get update
-python-certbot-apache 
-software-properties-common
+```
 
+* python-certbot-apache 
+* software-properties-common
+
+```bash
 $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 $ sudo apt-get update
@@ -390,7 +393,7 @@ Now install with apt...
 The full command is 
 
 ```bash
-$ sudo apt-get install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng3 libssl-dev postgresql postgresql-contrib yarn nodejs
+$ sudo apt-get install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng3 libssl-dev postgresql postgresql-contrib yarn nodejs python-certbot-apache software-properties-common 
 ```
 
 ### Post configure postgresql
