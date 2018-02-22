@@ -2,6 +2,8 @@
 
 February 2018. by klg.
 
+**acknowledgement: this is purely an instruction for getting an application running, not a complete manual on how to provision a production server for an Elixir application.**
+
 Sample repo to illustrate how to deploy a Phoenix umbrella to a VPS.
 
 In this demo, I will use the following IP as example in the shell command.
