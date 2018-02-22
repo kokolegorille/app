@@ -109,6 +109,18 @@ $ asdf install elixir 1.6.1-otp-20
 $ asdf global elixir 1.6.1-otp-20
 ```
 
+### Repeat on building machine
+
+You will need to repeat this three last step on the bulding machine.
+
+For a Linux box, You will need to...
+
+```bash
+$ echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+$ echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+$ source ~/.bashrc
+```
+
 #### Phoenix
 
 In case You don't have it yet.
@@ -558,7 +570,7 @@ $ sudo systemctl status app_umbrella.service
 
 ### Nginx
 
-The last part is to configure Nginx.
+The last part is to install and configure Nginx.
 
 ```bash
 $ sudo apt-get install nginx
