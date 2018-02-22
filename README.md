@@ -56,7 +56,7 @@ $ createuser -s postgres
 
 #### Asdf
 
-In this demo I will use asdf to install requested package.
+In this demo I will use asdf to install requested packages.
 
 Reference: https://github.com/asdf-vm/asdf
 
@@ -103,6 +103,8 @@ Reference: https://github.com/asdf-vm/asdf-elixir
 On the documentation page of the elixir plugin. You can read
 
 "If you would like to use precompiled binaries built with a more recent OTP, you can append -otp-${OTP_VERSION} to any installable version that can be given to asdf-elixir."
+
+The latest is version 1.6.1, You can specify also -otp-20.
 
 ```bash
 $ asdf install elixir 1.6.1-otp-20
@@ -508,7 +510,7 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE app_prod TO appuser;
 postgres=# \q
 ```
 
-Do you remeber the dump file? You can use it to reload schema.
+Do you remember the dump file? You can use it to reload schema.
 
 $ sudo -u postgres psql app_prod < ~/app_prod.dump 
 
