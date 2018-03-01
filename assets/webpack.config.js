@@ -11,12 +11,12 @@ const BUILD_PATH = path.resolve(ROOT_PATH, '../apps/app_web/priv/static');
 // https://github.com/webpack-contrib/extract-text-webpack-plugin/tree/next
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let commonPlugins = [
+const commonPlugins = [
   new ExtractTextPlugin({
     filename: 'css/styles.css',
     allChunks: true,
   }),
-]
+];
 
 module.exports = {
   context: __dirname,
@@ -46,7 +46,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react', 'stage-0']
+          presets: ['env', 'react', 'stage-0'],
         },
       },
       // Load stylesheets

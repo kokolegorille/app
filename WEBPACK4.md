@@ -1,6 +1,6 @@
 # Adding webpack 4.0.x
 
-Mars 2018.
+March 2018.
 
 As I choosed not to install brunch, I will add webpack 4 as a replacement. I am using yarn, but this can be done with npm as well. This is not a guide on using Webpack 4, just a simple way to add Webpack to a Phoenix umbrella application.
 
@@ -64,6 +64,8 @@ The first packages needed are the following dev dependencies. Versions are subje
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.9"
 
+At the moment, to be able to extract css file, You will need the alpha version of extract-text-webpack-plugin.
+
 ```bash
 $ yarn add -D css-loader file-loader style-loader webpack webpack-cli extract-text-webpack-plugin@next
 ```
@@ -78,15 +80,15 @@ $ yarn add -D babel-core babel-eslint babel-loader babel-preset-env babel-preset
 
 ## 5. Eslint
 
-To install eslint
+To install eslint.
 
 ```bash
 $ yarn add -D eslint
 ```
 
-To configure eslint, You need to select from multiple questions. 
+To configure eslint, You need to answer multiple questions from the command line. 
 
-For this example, I choosed Airbnb, React, YAML but You are free to select what You prefer.
+In this example, I choosed Airbnb, React, YAML but You are free to select what You prefer.
 
 ```bash
 $ eslint --init
@@ -122,7 +124,7 @@ $ eslint src
 
 ## 6. Configure Webpack 4
 
-Here is a simple config file, that will output bundle into app_umbrella/apps/app_web/priv/static/js and css into corresponding folder.
+Here is a simple config file, that will output js bundle and css stylesheet to their corresponding folders in app_umbrella/apps/app_web/priv/static/.
 
 ```bash
 $ vim webpack.config.js
@@ -139,12 +141,12 @@ const BUILD_PATH = path.resolve(ROOT_PATH, '../apps/app_web/priv/static');
 // https://github.com/webpack-contrib/extract-text-webpack-plugin/tree/next
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let commonPlugins = [
+const commonPlugins = [
   new ExtractTextPlugin({
     filename: 'css/styles.css',
     allChunks: true,
   }),
-]
+];
 
 module.exports = {
   context: __dirname,
@@ -174,7 +176,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react', 'stage-0']
+          presets: ['env', 'react', 'stage-0'],
         },
       },
       // Load stylesheets
@@ -212,8 +214,11 @@ body {
 }
 $ vim src/index.js
 import './app.css';
+
 const world = 'world';
+// eslint-disable-next-line no-console
 console.log(`hello ${world}`);
+
 ```
 
 The index file is just a test to see if css get created, and to check if babel is transpiling correctly.
@@ -305,7 +310,7 @@ Updating your css or js files will reload automaticaly.
 
 ## 9. Exclude dynamic files from git repo
 
-It is not useful to save those files to github, so just ignore them.
+It is not useful to save those files to github, so let's just ignore them.
 
 From the web part (apps/app_web), update .gitignore file.
 
@@ -331,4 +336,4 @@ $ git push
 
 This section does not cover using React. It will just guide You to assets bundling w/ Phoenix and Webpack 4. It does not use more loader than needed for demo. 
 
-You could add loader for SASS, etc.
+You could add more loaders, eg: SASS, CSV, XML etc.
