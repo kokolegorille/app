@@ -216,12 +216,12 @@ const world = 'world';
 console.log(`hello ${world}`);
 ```
 
-The index file is just a test to see if css get created, and to check babel is transpiling correctly.
+The index file is just a test to see if css get created, and to check if babel is transpiling correctly.
 
 Now try running ...
 
 ```bash
-s sqrt$ yarn build:prod
+$ yarn build:prod
 yarn run v1.3.2
 $ NODE_ENV=production webpack --mode production
 Hash: 7240df505aba723eac41
@@ -305,7 +305,7 @@ Updating your css or js files will reload automaticaly.
 
 ## 9. Exclude dynamic files from git repo
 
-It is not usefule to save those files to github, so just ignore them.
+It is not useful to save those files to github, so just ignore them.
 
 From the web part (apps/app_web), update .gitignore file.
 
@@ -318,4 +318,17 @@ $ vim .gitignore
     ...
 ```
 
-This section does not cover using React. It will just guide You to assets bundling w/ Phoenix and Webpack 4.
+## 10. Final step
+
+It's time to save the whole project, go to the root, and run
+
+```bash
+$ cd ../../
+$ git add .
+$ git commit -m "Add webpack 4 docs"
+$ git push
+```
+
+This section does not cover using React. It will just guide You to assets bundling w/ Phoenix and Webpack 4. It does not use more loader than needed for demo. 
+
+You could add loader for SASS, etc.
