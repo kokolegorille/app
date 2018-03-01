@@ -303,7 +303,7 @@ Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist 
 Updating your css or js files will reload automaticaly.
 
 
-## 9. exclude from git
+## 9. Exclude dynamic files from git repo
 
 It is not usefule to save those files to github, so just ignore them.
 
