@@ -39,6 +39,21 @@ $ vim package.json
   },
 ```
 
+Note: There might be a change in next Phoenix
+https://github.com/phoenixframework/phoenix/commit/89cdcfbaa041da1daba39e39b0828f6a28b6d52f
+In that case, change 
+
+```javascript
+"watch": "webpack --watch --mode development", 
+```
+
+
+to 
+
+```javascript
+"watch": "webpack --watch-stdin --mode development",
+```
+
 After creating assets, the rest is performed inside this folder.
 
 ## 2. Configure .gitignore
