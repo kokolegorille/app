@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "stats": "webpack --profile --json > stats.json",
-    "watch": "webpack --watch --mode development",
+    "watch": "webpack --watch-stdin --mode development",
     "build:dev": "webpack --watch --mode development",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "lint": "eslint src"

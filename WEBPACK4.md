@@ -28,30 +28,22 @@ This will create a package.json file. It is now possible to add some scripts.
 
 I added watch script to be used later by Phoenix watcher. Although it does the same as build:dev.
 
+Update Note 23-04-2018 : There is a change in next Phoenix
+https://github.com/phoenixframework/phoenix/commit/89cdcfbaa041da1daba39e39b0828f6a28b6d52f
+
+=> use "watch": "webpack --watch-stdin --mode development"
+
+instead of "watch": "webpack --watch --mode development"
+
 ```bash
 $ vim package.json
   "scripts": {
     "stats": "webpack --profile --json > stats.json",
-    "watch": "webpack --watch --mode development",
+    "watch": "webpack --watch-stdin --mode development",
     "build:dev": "webpack --watch --mode development",
     "build:prod": "NODE_ENV=production webpack --mode production",
     "lint": "eslint src"
   },
-```
-
-Note: There might be a change in next Phoenix
-https://github.com/phoenixframework/phoenix/commit/89cdcfbaa041da1daba39e39b0828f6a28b6d52f
-In that case, change 
-
-```javascript
-"watch": "webpack --watch --mode development", 
-```
-
-
-to 
-
-```javascript
-"watch": "webpack --watch-stdin --mode development",
 ```
 
 After creating assets, the rest is performed inside this folder.
