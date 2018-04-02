@@ -298,7 +298,7 @@ config :app_web, AppWeb.Endpoint,
   #  
   server: true,
   root: ".",
-  version: Application.spec(:deploy_phoenix, :vsn)
+  version: Application.spec(:app_web, :vsn)
 ```
 
 Please note it is mandatory to set a correct host for websocket to work. Replace localhost by your domain name!
