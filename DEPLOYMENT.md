@@ -627,3 +627,22 @@ $ sudo service nginx restart
 
 If everything went well, your server should be running now.
 
+### Note for apache2 user...
+
+Here is a sample file for apache, w/ server name obfuscated.
+
+<VirtualHost *:80>
+        ServerAdmin koko.le.gorille@gmail.com
+        ServerName xxx.xxx.com
+        RewriteEngine On
+        RewriteCond %{HTTP:Upgrade} =websocket [NC]
+        RewriteRule /(.*)           ws://localhost:4000/$1 [P,L]
+        RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+        RewriteRule /(.*)           http://localhost:4000/$1 [P,L]
+        ProxyPreserveHost On
+        ProxyPass / http://0.0.0.0:4000/
+        ProxyPass /socket ws://0.0.0.0:4000/
+        ProxyPassReverse / http://0.0.0.0:4000/
+        ProxyPassReverse /socket ws://0.0.0.0:4000/
+</VirtualHost>
+
